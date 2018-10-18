@@ -1,12 +1,15 @@
+const mongoose = require('mongoose');
 const graphql = require('graphql');
 const {
     GraphQLObjectType,
     GraphQLID,
+    GraphQLList,
     GraphQLNonNull
 } = graphql;
 const UserType = require('./user_type');
 const MessageType = require('./message_type');
-const _ = require('lodash');
+const User = require('../models/user');
+const Message = require('../models/message');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -15,14 +18,20 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id : { type: GraphQLNonNull(GraphQLID) } },
             resolve(parentValue, args) {
-                return _.find(users, { id: args.id });
+                User.findById(id);
+            }
+        },
+        messages: {
+            type: new GraphQLList(MessageType),
+            resolve() {
+              return Message.find({});
             }
         },
         message: {
           type: MessageType,
           args: { id: { type: new GraphQLNonNull(GraphQLID) } },
           resolve(parentValue, { id }) {
-            return _.find(messages, { id: args.id });
+            return Message.findById(id);
           }
         }
     }
