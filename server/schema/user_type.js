@@ -1,7 +1,10 @@
+const graphql = require('graphql');
 const {
     GraphQLObjectType,
-    GraphQLString
+    GraphQLString,
+    GraphQLList
 } = graphql;
+const MessageType = require('./message_type');
 
 const UserType = new GraphQLObjectType({
     name: 'User',
@@ -9,7 +12,13 @@ const UserType = new GraphQLObjectType({
         id: { type: GraphQLString },
         name: { type: GraphQLString },
         email: { type: GraphQLString },
-        password: { type: GraphQLString }
+        password: { type: GraphQLString },
+        messages: {
+            type: new GraphQLList(MessageType),
+            resolve(parentValue) {
+              return _.find(messages, { id: args.id });
+            }
+          }
     }
 });
 
