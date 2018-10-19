@@ -1,8 +1,10 @@
+// Import external librairies
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 
 class VideoTraining extends Component {
     render() {
+      // Defining recommended values for player
       const opts = {
         height: '315',
         width: '560',
@@ -11,6 +13,7 @@ class VideoTraining extends Component {
         }
       };
    
+      // Returning the video player. Change the Youtube video id if you want to display another video.
       return (
         <YouTube
           videoId="A_BKOMTeLRg"
@@ -21,7 +24,7 @@ class VideoTraining extends Component {
     }
    
     _onReady(event) {
-      // access to player in all event handlers via event.target
+      // Access to player in all event handlers via event.target
       event.target.pauseVideo();
     }
   }

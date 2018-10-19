@@ -1,18 +1,20 @@
+// Import external librairies
 import React, { Component } from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
 import { FaHeart } from 'react-icons/fa';
 
+// Import internal librairies
 import MessageList from './components/MessageList';
 import MessageCreate from './components/MessageCreate';
 import VideoTraining from './components/VideoTraining';
-import './style/App.css';
 import './style/style.css';
 
 const client = new ApolloClient({});
 
 class App extends Component {
 
+  // Setting up ApolloProvider and rendering the elements of the main page
   render() {
     return (
       <ApolloProvider client={client}>
@@ -24,11 +26,11 @@ class App extends Component {
           </header>
           <div className="container">
             <div className="messages-container">
-              <MessageCreate className="message-creation"/>
-              <MessageList className="messages-list" />
+              <MessageCreate />
+              <MessageList />
             </div>
             <div className="description">
-              <h2>Chat and Learn with your colleagues</h2>
+              <h2>Chat & Learn with your colleagues</h2>
               <div>
                 <VideoTraining />
               </div>

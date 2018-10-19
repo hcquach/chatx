@@ -1,3 +1,4 @@
+// Requiring Mongoose, GraphQL and Message model
 const mongoose = require('mongoose');
 const graphql = require('graphql');
 const {
@@ -9,6 +10,7 @@ const {
 const MessageType = require('./message_type');
 const Message = mongoose.model('message');
 
+// Queries to retrieve the 10 last messages or a specific one from DB
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {

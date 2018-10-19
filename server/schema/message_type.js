@@ -1,3 +1,4 @@
+// Requiring Mongoose and GraphQL to build the message type
 const mongoose = require('mongoose');
 const graphql = require('graphql');
 const {
@@ -5,8 +6,8 @@ const {
   GraphQLID,
   GraphQLString
 } = graphql;
-const Message = require('../models/message');
 
+// Declaring the message type
 const MessageType = new GraphQLObjectType({
   name: 'MessageType',
   fields: () => ({

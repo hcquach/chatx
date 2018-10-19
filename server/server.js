@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// MONGO_DB URI imported from a gitignore file
 const envConfig = require('../config');
-
 const MONGO_URI = envConfig.MONGO_URI;
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');

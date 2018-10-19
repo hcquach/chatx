@@ -1,3 +1,4 @@
+// Building the GQL schema with the GQL queries and mutations
 const graphql = require('graphql');
 const { GraphQLSchema } = graphql;
 

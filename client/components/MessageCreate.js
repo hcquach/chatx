@@ -1,9 +1,13 @@
+// Import external librairies
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+
+// Import the query to fetch and display all chat messages
 import query from '../queries/fetchMessages';
 
 class MessageCreate extends Component {
+    // Constructor with a default value for anonymous users
     constructor(props) {
         super(props);
         this.state = { 
@@ -12,10 +16,12 @@ class MessageCreate extends Component {
         };
     }
 
+    // Validate if content has been filled
     validate() {
         return (this.state.content.length < 1)
     }
 
+    // Check if the form is valid, call the mutation with the new attributes and refetch queries to update the list
     onSubmit(event) {
         event.preventDefault();
         const err = this.validate();
@@ -28,6 +34,7 @@ class MessageCreate extends Component {
         }
     }
 
+    // Render the form calling the onSubmit function
     render() {
         return (
             <div>
@@ -53,6 +60,7 @@ class MessageCreate extends Component {
     }
 }
 
+// Variable to pass the mutation to GQL server on message creation
 const mutation = gql`
     mutation AddMessage($user: String, $content: String!) {
         addMessage(user: $user, content: $content) {
