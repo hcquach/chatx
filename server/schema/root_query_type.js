@@ -15,7 +15,7 @@ const RootQuery = new GraphQLObjectType({
         messages: {
             type: new GraphQLList(MessageType),
             resolve() {
-              return Message.find({});
+              return Message.find({}).sort({'_id': -1}).limit(10);
             }
         },
         message: {

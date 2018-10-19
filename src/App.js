@@ -21,8 +21,8 @@ class App extends Component {
           </header>
           <div className="container">
             <div className="messages-container">
-              <MessageList className="messages-list" />
               <MessageCreate className="message-creation"/>
+              <MessageList className="messages-list" />
             </div>
             <div className="description">
               <h2>Chat created in 2 days using full JS stack</h2>
