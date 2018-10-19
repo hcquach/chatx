@@ -21,9 +21,9 @@ const mutation = new GraphQLObjectType({
       type: MessageType,
       args: {
         content: { type: GraphQLString },
-        userId: { type: GraphQLID }
+        user: { type: GraphQLString }
       },
-      resolve(parentValue, { content, userId }) {
+      resolve(parentValue, { content, user }) {
       }
     }
   }

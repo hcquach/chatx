@@ -12,15 +12,7 @@ const MessageType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     content: { type: GraphQLString },
-    user: {
-      type: require('./user_type'),
-      resolve(parentValue) {
-        return Message.findById(parentValue).populate('user')
-          .then(message => {
-            return message.user
-          });
-      }
-    }
+    user: { type: GraphQLString }
   })
 });
 
