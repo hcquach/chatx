@@ -17,3 +17,42 @@ nav {
 	float: left;
 	margin: 15px 0;
 }
+
+.container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.messages-container {
+    background-image: url('https://raw.githubusercontent.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/6bc38ead9ec5d18f38314f7ce6ff091ec903e2c1/www/img/chat-background.jpg');
+    background-size: cover;
+    border-radius: 2px;
+    height: 80vh;
+    width: 45%;
+    padding: 5px;
+}
+
+.message-user{
+    font-weight: 500;
+}
+
+.message-content {
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border-radius: 20px;
+}
+
+.description {
+    width: 50%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0px;
+}

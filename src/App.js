@@ -19,9 +19,14 @@ class App extends Component {
                   <h1 className="logo">ChatX</h1>
               </nav>
           </header>
-          <div>
-            <MessageList />
-            <MessageCreate />
+          <div className="container">
+            <div className="messages-container">
+              <MessageList className="messages-list" />
+              <MessageCreate className="message-creation"/>
+            </div>
+            <div className="description">
+              <h2>Chat created in 2 days using full JS stack</h2>
+            </div>
           </div>
         </div>
       </ApolloProvider>
