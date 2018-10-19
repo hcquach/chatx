@@ -3,6 +3,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
 import MessageList from './components/MessageList';
 import MessageCreate from './components/MessageCreate';
+import VideoTraining from './components/VideoTraining';
 import './style/App.css';
 import './style/style.css';
 
@@ -25,7 +26,10 @@ class App extends Component {
               <MessageList className="messages-list" />
             </div>
             <div className="description">
-              <h2>Chat created in 2 days using full JS stack</h2>
+              <h2>Chat and Learn with your colleagues</h2>
+              <div>
+                <VideoTraining />
+              </div>
             </div>
           </div>
         </div>

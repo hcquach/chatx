@@ -31,7 +31,7 @@ class MessageCreate extends Component {
     render() {
         return (
             <div>
-                <h3>Send a new message</h3>
+                <h2>Send a new message</h2>
                 <form onSubmit={this.onSubmit.bind(this)}>
                     <label>Name:</label>
                     <input 
