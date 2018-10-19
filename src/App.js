@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
+import { FaHeart } from 'react-icons/fa';
+
 import MessageList from './components/MessageList';
 import MessageCreate from './components/MessageCreate';
 import VideoTraining from './components/VideoTraining';
@@ -30,6 +32,7 @@ class App extends Component {
               <div>
                 <VideoTraining />
               </div>
+              <h3>Made with <FaHeart /> in 2 days. Had fun & Learned a lot. Hien-Chanh.</h3>
             </div>
           </div>
         </div>
