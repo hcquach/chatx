@@ -8,16 +8,24 @@ class MessageCreate extends Component {
         super(props);
         this.state = { 
             content: '', 
-            user: ''
+            user: 'MisterX'
         };
+    }
+
+    validate() {
+        return (this.state.content.length < 1)
     }
 
     onSubmit(event) {
         event.preventDefault();
-        this.props.mutate({
-            variables: { content: this.state.content, user: this.state.user },
-            refetchQueries: [{ query }]
-        });
+        const err = this.validate();
+        console.log(err);
+        if (!err) {
+            this.props.mutate({
+                variables: { content: this.state.content, user: this.state.user },
+                refetchQueries: [{ query }]
+            });
+        }
     }
 
     render() {
@@ -28,6 +36,7 @@ class MessageCreate extends Component {
                     <label>Name:</label>
                     <input 
                         onChange={event => this.setState({ user: event.target.value })}
+                        placeholder="MisterX"
                         value={this.state.user}
                     />
                     <label>Message:</label>
