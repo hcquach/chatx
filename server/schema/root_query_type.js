@@ -6,21 +6,12 @@ const {
     GraphQLList,
     GraphQLNonNull
 } = graphql;
-const UserType = require('./user_type');
 const MessageType = require('./message_type');
-const User = require('../models/user');
-const Message = require('../models/message');
+const Message = mongoose.model('message');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        user: {
-            type: UserType,
-            args: { id : { type: GraphQLNonNull(GraphQLID) } },
-            resolve(parentValue, args) {
-                User.findById(id);
-            }
-        },
         messages: {
             type: new GraphQLList(MessageType),
             resolve() {
