@@ -38,11 +38,13 @@ class MessageCreate extends Component {
                         onChange={event => this.setState({ user: event.target.value })}
                         placeholder="MisterX"
                         value={this.state.user}
+                        style={{margin: '5px'}}
                     />
                     <label>Message:</label>
                     <input 
                         onChange={event => this.setState({ content: event.target.value })}
                         value={this.state.content}
+                        style={{margin: '5px'}}
                     />
                      <input type="submit" value="Submit" />
                 </form>
