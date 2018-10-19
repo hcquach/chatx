@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
 import MessageList from './components/MessageList';
 import MessageCreate from './components/MessageCreate';
+import './style/App.css';
+import './style/style.css';
 
 const client = new ApolloClient({});
 
@@ -13,9 +14,15 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div className="App">
-          <h1>ChatX</h1>
-          <MessageList />
-          <MessageCreate />
+          <header>
+              <nav>
+                  <h1 className="logo">ChatX</h1>
+              </nav>
+          </header>
+          <div>
+            <MessageList />
+            <MessageCreate />
+          </div>
         </div>
       </ApolloProvider>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import query from '../queries/fetchMessages';
 
 class MessageCreate extends Component {
     constructor(props) {
@@ -13,9 +14,9 @@ class MessageCreate extends Component {
 
     onSubmit(event) {
         event.preventDefault();
-        console.log(this.props);
         this.props.mutate({
-            variables: { content: this.state.content, user: this.state.user }
+            variables: { content: this.state.content, user: this.state.user },
+            refetchQueries: [{ query }]
         });
     }
 
